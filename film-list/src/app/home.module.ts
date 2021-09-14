@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from "swiper/angular";
 
 import { HomeComponent } from './home/home.component';
 import { FilmContainerComponent } from './components/film-container/film-container.component';
@@ -14,7 +15,8 @@ import { FilmContainerComponent } from './components/film-container/film-contain
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [HomeComponent]

@@ -1,1 +1,5 @@
-<p>film-container works!</p>
+<swiper [slidesPerView]="3" [spaceBetween]="30" [freeMode]="true" [pagination]="{ clickable: true }">
+    <ng-template swiperSlide *ngFor="let film of films; trackBy: trackByFilm">
+        <img [src]="film.poster">
+    </ng-template>
+  </swiper>
