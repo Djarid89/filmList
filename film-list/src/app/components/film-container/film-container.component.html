@@ -1,5 +1,11 @@
-<swiper [slidesPerView]="3" [spaceBetween]="30" [freeMode]="true" [pagination]="{ clickable: true }">
+<mat-form-field class="order" appearance="fill">
+    <mat-label>Ordinamento</mat-label>
+    <mat-select (selectionChange)="orderFilms()" [(ngModel)]="order" name="order">
+      <mat-option *ngFor="let order of orders" [value]="order.value">{{order.viewValue}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<swiper [slidesPerView]="4" [spaceBetween]="0" [freeMode]="true" [pagination]="{ clickable: true }">
     <ng-template swiperSlide *ngFor="let film of films; trackBy: trackByFilm">
-        <img [src]="film.poster">
+        <img [src]="film.poster" (click)="goToDetails(film)">
     </ng-template>
-  </swiper>
+</swiper>
