@@ -1,5 +1,29 @@
-div {
+div.container {
     background-color: black;
-    height: 100vh;
     padding: 0 50px;
+    min-height: 100vh;
+}
+
+div.header {
+    border-bottom: 1px solid white;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 70px;
+}
+
+h1, p {
+    color:white;
+}
+
+p {
+    font-size: 20px;
 }

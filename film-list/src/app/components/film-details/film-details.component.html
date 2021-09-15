@@ -1,1 +1,7 @@
-<p>film-details works!</p>
+<div>
+    <img [src]="film?.poster">
+    <h1>{{film?.title}}</h1>
+    <p>{{film?.overview}}</p>
+    <button mat-button>Details</button>
+    <!-- (click)="goToDetails(film)" -->
+</div>

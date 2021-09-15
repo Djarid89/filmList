@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { Film } from 'src/app/shared/models/film';
 
 @Component({
-  selector: 'app-film-details',
+  selector: 'film-details',
   templateUrl: './film-details.component.html',
   styleUrls: ['./film-details.component.scss']
 })
 export class FilmDetailsComponent implements OnInit {
 
+  @Input()
   film: Film | undefined
 
   constructor() { }
 
   ngOnInit(): void {
-    this.film = window.history.state.film;
+    if(!this.film)
+      this.film = window.history.state.film;
   }
 
 }
