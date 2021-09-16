@@ -1,5 +1,6 @@
-<div>
+<div *ngIf="film">
     <img [src]="film?.posterSafe">
     <h1>{{film?.title}}</h1>
     <p>{{film?.overview}}</p>
+    <ng-rating-bar [(value)]="film.voteAverage" [ratingCount]="10"></ng-rating-bar>
 </div>

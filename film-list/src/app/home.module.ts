@@ -9,6 +9,7 @@ import { FilmContainerComponent } from './components/film-container/film-contain
 import { FilmDetailsComponent } from './components/film-details/film-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { NgRatingBarModule } from 'ng-rating-bar';
 
 // UI: Angular Material
 import { MatSelectModule } from '@angular/material/select';
@@ -30,7 +31,8 @@ import { FilmComponent } from './components/film/film.component';
     BrowserAnimationsModule,
     MatSelectModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgRatingBarModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
