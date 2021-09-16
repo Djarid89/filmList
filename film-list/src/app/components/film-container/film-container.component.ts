@@ -22,8 +22,8 @@ export class FilmContainerComponent implements OnInit {
   order: string;
 
   orders: Order[] = [
-    {value: OrderType.Date, viewValue: 'Release date'},
-    {value: OrderType.Vote, viewValue: 'Average vote'}
+    {value: OrderType.Date, viewValue: 'Data di uscita'},
+    {value: OrderType.Vote, viewValue: 'Media dei voti'}
   ];
 
   constructor(filmService: FilmService, private router: Router) {
