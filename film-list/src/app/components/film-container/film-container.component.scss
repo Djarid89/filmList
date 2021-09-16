@@ -51,7 +51,8 @@ div.film-container {
 }
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled),
-.mat-form-field.mat-focused .mat-form-field-label {
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: white;
 }
 
