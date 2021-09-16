@@ -15,7 +15,17 @@ export class FilmService {
 
   getFilms(): Observable<Film[]> {
     return this.http.get<IFilmResult>(`https://api.themoviedb.org/3/movie/popular?api_key=${environment.apiKey}&language=en-US&page=1`).pipe(
-      map(films => films.results.map(film => new Film(film, this.sanitizer)))
+      map(films => films.results.map(film => {
+        let result = new Film();
+        result.id = film.id;
+        result.poster = film.poster_path;
+        result.posterSafe = this.sanitizer.bypassSecurityTrustResourceUrl('https://image.tmdb.org/t/p/w500' + film.poster_path);
+        result.title = film.title;
+        result.overview = film.overview;
+        result.releaseDate = film.release_date;
+        result.voteAverage = film.vote_average;
+        return result;
+      }))
     );
   }
 }

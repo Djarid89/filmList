@@ -13,12 +13,14 @@ import { FormsModule } from '@angular/forms';
 // UI: Angular Material
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { FilmComponent } from './components/film/film.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     FilmContainerComponent,
-    FilmDetailsComponent
+    FilmDetailsComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,

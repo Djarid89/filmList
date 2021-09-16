@@ -4,8 +4,12 @@
       <mat-option *ngFor="let order of orders" [value]="order.value">{{order.viewValue}}</mat-option>
     </mat-select>
 </mat-form-field>
-<swiper [navigation]="true" [slidesPerView]="4" [spaceBetween]="0" [freeMode]="true" [pagination]="{ clickable: true }">
+
+<swiper [navigation]="true" [slidesPerView]="3" [spaceBetween]="0" [freeMode]="true" [pagination]="{ clickable: true }">
     <ng-template swiperSlide *ngFor="let film of films; trackBy: trackByFilm">
-        <film-details [film]="film"></film-details>
+        <div class="film-container">
+            <film [film]="film"></film>
+            <button mat-button (click)="goToDetails(film)">Dettagli</button>
+        </div>
     </ng-template>
 </swiper>

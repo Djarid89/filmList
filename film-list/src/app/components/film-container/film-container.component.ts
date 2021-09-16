@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FilmService } from 'src/app/http/films/films.service';
 import { Film } from 'src/app/shared/models/film';
 
-import { SwiperComponent } from "swiper/angular";
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from "swiper";
-import { Router } from '@angular/router';
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
@@ -31,7 +30,7 @@ export class FilmContainerComponent implements OnInit {
     this.order = OrderType.Date
     filmService.getFilms().subscribe(
       (films) => this.films = films,
-      () => {},
+      () => alert('Qualcosa è andato storto...'),
       () => this.orderFilms());
   }
 
@@ -43,15 +42,15 @@ export class FilmContainerComponent implements OnInit {
     return Number(film.id);
   }
 
-  goToDetails(film: Film): void {
-    this.router.navigate(['/film-details'], { state: { film } });
-  }
-
   orderFilms(): void {
     if(this.order === OrderType.Date)
       this.films.sort((a, b) => { return <any>new Date(b.releaseDate) - <any>new Date(a.releaseDate); });
     else
       this.films.sort((a, b) => b.voteAverage - a.voteAverage);
+  }
+
+  goToDetails(film: Film): void {
+    this.router.navigate(['/film-details'], { state: { film } });
   }
 }
 
